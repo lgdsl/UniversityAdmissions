@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="com.example.universityadmissions.ApplicantController"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="800" prefHeight="600">
+
+  <!-- Основной контейнер -->
+  <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.bottomAnchor="10"
+        AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+
+    <!-- Таблица с абитуриентами -->
+    <TableView fx:id="applicantTable" VBox.vgrow="ALWAYS">
+      <columns>
+        <TableColumn fx:id="nameColumn" text="ФИО" minWidth="150"/>
+        <TableColumn fx:id="birthDateColumn" text="Дата рождения" minWidth="120"/>
+        <TableColumn fx:id="specialtyColumn" text="Специальность" minWidth="200"/>
+        <TableColumn fx:id="examScoreColumn" text="Балл экзамена" minWidth="100"/>
+        <TableColumn fx:id="addressColumn" text="Адрес" minWidth="100"/>
+        <TableColumn fx:id="phoneColumn" text="Номер телефона" minWidth="100"/>
+        <TableColumn fx:id="emailColumn" text="Email" minWidth="100"/>
+      </columns>
+    </TableView>
+
+    <!-- Контейнер для полей ввода -->
+    <GridPane hgap="10" vgap="10">
+      <columnConstraints>
+        <ColumnConstraints halignment="RIGHT"/>
+        <ColumnConstraints hgrow="ALWAYS"/>
+      </columnConstraints>
+
+      <Label text="ФИО:"/>
+      <TextField fx:id="nameField" GridPane.columnIndex="1"/>
+
+      <Label text="Дата рождения:" GridPane.rowIndex="1"/>
+      <DatePicker fx:id="birthDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+      <Label text="Адрес:" GridPane.rowIndex="2"/>
+      <TextField fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+      <Label text="Телефон:" GridPane.rowIndex="3"/>
+      <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+      <Label text="Email:" GridPane.rowIndex="4"/>
+      <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+      <Label text="Специальность:" GridPane.rowIndex="5"/>
+      <ComboBox fx:id="specialtyComboBox" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+      <Label text="Дата экзамена:" GridPane.rowIndex="6"/>
+      <DatePicker fx:id="examDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+      <Label text="Балл экзамена:" GridPane.rowIndex="7"/>
+      <TextField fx:id="examScoreField" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+    </GridPane>
+
+    <!-- Контейнер для кнопок -->
+    <HBox spacing="10">
+      <Button fx:id="addButton" text="Добавить"/>
+      <Button fx:id="deleteButton" text="Удалить"/>
+      <Button fx:id="clearButton" text="Очистить"/>
+    </HBox>
+  </VBox>
+</AnchorPane>
