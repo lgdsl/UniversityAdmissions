@@ -3,18 +3,15 @@ package com.example.universityadmissions;
 import java.time.LocalDate;
 
 public class Exam {
-    private Discipline discipline; // Дисциплина, по которой проводится экзамен
-    private int score;            // Балл, полученный за экзамен
-    private LocalDate examDate;   // Дата сдачи экзамена
-    
+    private Discipline discipline;
+    private double score;
+    private LocalDate examDate;
 
-    // Конструктор для класса Exam
-    public Exam(Discipline discipline, int score, LocalDate examDate) {
+    public Exam(Discipline discipline, double score, LocalDate examDate) {
         this.discipline = discipline;
         this.score = score;
         this.examDate = examDate;
     }
-
 
     public Discipline getDiscipline() {
         return discipline;
@@ -24,19 +21,19 @@ public class Exam {
         this.discipline = discipline;
     }
 
+    public double getScore() {
+        return score;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
+    }
+
     public LocalDate getExamDate() {
         return examDate;
     }
 
     public void setExamDate(LocalDate examDate) {
         this.examDate = examDate;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public int getScore() {
-        return score;
     }
 }

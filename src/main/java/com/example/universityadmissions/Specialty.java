@@ -1,21 +1,16 @@
 package com.example.universityadmissions;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Specialty {
-    private String name;          // Название специальности (например, "Информатика")
-    private String code;          // Код специальности
-    private List<Discipline> requiredExams; // Список дисциплин, необходимых для поступления
+    private String name;
+    private Discipline discipline;
 
-    // Конструктор для класса Specialty
-    public Specialty(String name, String code, List<Discipline> requiredExams) {
+    public Specialty(String name, Discipline discipline) {
         this.name = name;
-        this.code = code;
-        this.requiredExams = new ArrayList<Discipline>();
+        this.discipline = discipline;
     }
 
-    // Геттер и сеттер для поля name
     public String getName() {
         return name;
     }
@@ -24,21 +19,11 @@ public class Specialty {
         this.name = name;
     }
 
-    // Геттер и сеттер для поля code
-    public String getCode() {
-        return code;
+    public Discipline getDiscipline() {
+        return discipline;
     }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    // Геттер и сеттер для поля requiredExams
-    public List<Discipline> getRequiredExams() {
-        return requiredExams;
-    }
-
-    public void setRequiredExams(List<Discipline> requiredExams) {
-        this.requiredExams = requiredExams;
+    public void setDiscipline(Discipline discipline) {
+        this.discipline = discipline;
     }
 }
